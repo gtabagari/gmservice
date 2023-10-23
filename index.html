@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PSCo <GM system></title>
+</head>
+<body>
+<h2>Hello customer!</h2>
+<h5 style="color: cadetblue">This is a gate management. The gate should be open by tapping on the button below </h5>
+<p id="output"></p>
+<button onclick="sendcmd()" style="font-size: xx-large">Open Gate!</button>
+<p style="font-size: x-small">PSCo Philly</p>
+<p style="font-size: x-small">&copy2023 All Rights Reserved.</p>
+<p style="font-size: x-small">&copyInvented PSCo Philadelphia</p>
+<script>
+    function sendcmd() {
+        fetch('http://'+location.host+'/test1?name=Joshua', {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.text())
+            .then(text => console.log(text))
+    }
+</script>
+</body>
+</html>
